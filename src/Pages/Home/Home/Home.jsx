@@ -1,3 +1,4 @@
+import PopularInstructor from "./PopularInstructor";
 
 const Home = () => {
   return (
@@ -35,7 +36,8 @@ const Home = () => {
     
     </div>
   </div>
-</div>
+      </div>
+      <PopularInstructor></PopularInstructor>
     </div>
   );
 };

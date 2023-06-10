@@ -1,0 +1,44 @@
+[
+  {
+    "_id": 1,
+    "img": "https://usercontent.one/wp/www.ibdpartnership.co.uk/wp-content/uploads/2020/01/IMG_20200117_161049-scaled.jpg",
+    "name": "Henrick Chefår",
+    "email": "henrik@gmail.com",
+    "classes": "Svenska and Fanska"
+  },
+  {
+    "_id": 2,
+    "img": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    "name": "Jon Albarig",
+    "email": "jog@gmail.com",
+    "classes": "Finish"
+  },
+  {
+    "_id": 3,
+    "img": "http://4.bp.blogspot.com/_Cm7RILBShPs/TPaah8e5CnI/AAAAAAAACls/wun7WqsGCU0/s1600/DSC07808W.jpg",
+    "name": "Maria jonas",
+    "email": "maria@gmail.com",
+    "classes": "Spanish"
+  },
+  {
+    "_id": 4,
+    "img": "https://media.istockphoto.com/id/998843474/photo/nerdy-girl-from-the-east.jpg?s=1024x1024&w=is&k=20&c=sb2ay22kPmtMLouDb_ImYHuzFfs-MLInzTF5v9NfZa0=",
+    "name": "Hasna kabir",
+    "email": "hasna@gmail.com",
+    "classes": "Arabiq"
+  },
+  {
+    "_id": 5,
+    "img": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
+    "name": "Lisa fedrik",
+    "email": "lisa@gmail.com",
+    "classes": "Franch"
+  },
+  {
+    "_id": 6,
+    "img": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    "name": "Himsha dewan",
+    "email": "himsha@gmail.com",
+    "classes": "English and Franch"
+  }
+]

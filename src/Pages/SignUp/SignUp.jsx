@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -9,7 +10,8 @@ const SignUp = () => {
 
   const { register, handleSubmit, reset,formState: { errors } } = useForm();
 
-  const {createUser,updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const onSubmit = data => {
     console.log(data);
@@ -28,10 +30,12 @@ const SignUp = () => {
               showConfirmButton: false,
               timer: 1500
             })
+
           })
           .catch(error => {
           console.log(error)
-        })
+          })
+        navigate('/')
     })
   }
   return (
