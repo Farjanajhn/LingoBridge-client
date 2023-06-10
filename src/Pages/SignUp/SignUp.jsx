@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 
@@ -6,8 +8,15 @@ const SignUp = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
+  const {createUser } = useContext(AuthContext);
+
   const onSubmit = data => {
     console.log(data);
+    createUser(data.email, data.password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+    })
   }
   return (
     <div>
@@ -38,7 +47,7 @@ const SignUp = () => {
           </label>
           <input type="password" placeholder="password" name="password" {...register("password", {
        
-            pattern:/^[a-z]{1,5}$/
+            pattern:/^[a-z]{1,6}$/
 
          })} className="input input-bordered" />
        
@@ -47,7 +56,7 @@ const SignUp = () => {
           
         </div>
         <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="login"/>
+                <input className="btn btn-primary" type="submit" value="Sign Up"/>
         </div>
             </form>
     </div>
