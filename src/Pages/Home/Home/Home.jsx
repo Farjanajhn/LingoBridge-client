@@ -1,8 +1,12 @@
 import PopularInstructor from "./PopularInstructor";
+import { Helmet} from 'react-helmet-async';
 
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>Lingo Bridge | Home</title>
+      </Helmet>
       <div className="carousel w-full mt-4">
      
   <div id="slide1" className="carousel-item relative w-full">
