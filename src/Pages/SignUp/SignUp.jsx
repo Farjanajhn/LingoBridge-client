@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 
 
 const SignUp = () => {
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset,formState: { errors } } = useForm();
 
-  const {createUser } = useContext(AuthContext);
+  const {createUser,updateUserProfile } = useContext(AuthContext);
 
   const onSubmit = data => {
     console.log(data);
@@ -16,12 +17,42 @@ const SignUp = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            console.log('user profile info update');
+            reset();
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'Your work has been saved',
+              showConfirmButton: false,
+              timer: 1500
+            })
+          })
+          .catch(error => {
+          console.log(error)
+        })
     })
   }
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-        <div className="form-control">
+      <div className="form-control">
+            <label className="label">
+              <span className="label-text">Name</span>
+            </label>
+              <input type="text" {...register("name",{ required: true })} placeholder="name" className="input input-bordered" />
+              {errors.name && <span className="text-red-600">This field is required</span>}
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Photo Url</span>
+            </label>
+              <input type="text" {...register("photoURL",{ required: true })} placeholder="photo URL" className="input input-bordered" />
+              {errors.photoURL && <span className="text-red-600">This field is required</span>}
+          </div>
+      {/*   <div className="form-control">
+
           <label className="label">
             <span className="label-text">Name</span>
           </label>
@@ -32,7 +63,7 @@ const SignUp = () => {
             <span className="label-text">PhotoURL</span>
           </label>
           <input type="text" placeholder="photoUrl" {...register("photoURL")} name="email" className="input input-bordered" />
-        </div>
+        </div> */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
