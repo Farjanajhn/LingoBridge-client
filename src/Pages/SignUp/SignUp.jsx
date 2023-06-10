@@ -28,13 +28,22 @@ const SignUp = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" {...register("email",{ required: true })} name="email" className="input input-bordered" />
+          <input type="text" placeholder="email" {...register("email", { required: true  })} name="email" className="input input-bordered" />
+          {errors.email && <span>This field is required</span>}
+         
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" name="password" {...register("password",{ required: true })} className="input input-bordered" />
+          <input type="password" placeholder="password" name="password" {...register("password", {
+       
+            pattern:/^[a-z]{1,5}$/
+
+         })} className="input input-bordered" />
+       
+          
+          {errors.password?.type === 'pattern' && <p className="text-red-600">Password must be less than 6 characters,must not contain any uppercase, must not contain any special character</p>} 
           
         </div>
         <div className="form-control mt-6">
