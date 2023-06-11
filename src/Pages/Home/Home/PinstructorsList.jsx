@@ -1,9 +1,16 @@
+import SectionTitle from "../../Shared/SectionTitle";
 
 
 const PinstructorsList = ({ instructor }) => {
   const { img, name, email,classes } = instructor;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl mt-4">
+    <div>
+    
+      <div className="card w-96 bg-base-100 shadow-xl mt-4">
+      <SectionTitle>
+        heading={"Popular instructors"}
+        subHeading={"khkjgjhghj"}
+      </SectionTitle>
     <figure><img className="w-[200px] h-[200px] "src={img} alt="Shoes" /></figure>
     <div className="card-body">
         <h2 className="card-title">Name:{name}</h2>
@@ -15,6 +22,7 @@ const PinstructorsList = ({ instructor }) => {
       </div>
     </div>
   </div>
+   </div>
   );
 };
 
