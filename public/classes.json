@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "img": "https://www.cosmolingua.in/wp-content/uploads/2023/01/Learn-swedish.jpg",
+    "Instructor_name": "Henrick Chefår",
+    "email": "henrik@gmail.com",
+    "classe_name": "Svenska",
+    "available_seat": 24,
+    "price": 300
+  },
+  {
+    "id": 2,
+    "img": "https://qph.cf2.quoracdn.net/main-qimg-b88768ccbb04a3b48ef17a4746ab38bc",
+    "name": "Jon Albarig",
+    "email": "jog@gmail.com",
+    "classe_name": "German",
+    "available_seat": 44,
+    "price": 220
+  },
+  {
+    "id": 3,
+    "img": "https://fh-sites.imgix.net/sites/3006/2021/08/23204454/Spanish-Words-2.jpg",
+    "name": "Maria jonas",
+    "email": "maria@gmail.com",
+    "classe_name": "Spanish",
+    "available_seat": 31,
+    "price": 240
+  },
+  {
+    "id": 4,
+    "img": "https://mishkahacademy.com/wp-content/uploads/2022/04/60-1-e1671190571742.jpg.webp",
+    "name": "Hasna kabir",
+    "email": "hasna@gmail.com",
+    "classe_name": "Arabiq",
+    "available_seat": 71,
+    "price": 350
+  },
+  {
+    "id": 5,
+    "img": "https://www.french-access.com/wp-content/uploads/2021/02/1-1080x675.png",
+    "name": "Lisa fedrik",
+    "email": "lisa@gmail.com",
+    "classe_name": "Franch",
+    "available_seat": 15,
+    "price": 250
+  },
+  {
+    "id": 6,
+    "img": "https://www.schoolnetindia.com/blog/wp-content/uploads/2022/07/xHow-to-Learn-English-Speaking-at-Home-960x540.jpg.pagespeed.ic.V7ST1mm_rq.webp",
+    "name": "Himsha dewan",
+    "email": "himsha@gmail.com",
+    "classe_name": "English ",
+    "available_seat": 28,
+    "price": 300
+  },
+  {
+    "id": 7,
+    "img": "https://thumbs.dreamstime.com/z/vector-illustration-speech-bubbles-portuguese-language-flag-portugal-two-hand-drawn-doodle-national-written-name-109521238.jpg",
+    "name": "Himsha dewan",
+    "email": "himsha@gmail.com",
+    "classe_name": "Purtuguese",
+    "available_seat": 22,
+    "price": 170
+  },
+  {
+    "id": 8,
+    "img": "https://cdn.dribbble.com/users/336661/screenshots/3312413/media/cfc2a6518a92f4254182a6398f8cc493.png",
+    "name": "Tasnim Hoque",
+    "email": "himsha@gmail.com",
+    "classe_name": "Bangla",
+    "available_seat": 20,
+    "price": 120
+  },
+  {
+    "id": 9,
+    "img": "https://objectiveias.in/wp-content/uploads/2022/09/hindi-diwas.jpg",
+    "name": "Ranjit shaha",
+    "email": "himsha@gmail.com",
+    "classe_name": "Hindi",
+    "available_seat": 10,
+    "price": 200
+  },
+  {
+    "id": 10,
+    "img": "https://www.shutterstock.com/image-vector/international-marathi-language-day-calligraphy-600w-1920479069.jpg",
+    "name": "Diyabba bharati",
+    "email": "himsha@gmail.com",
+    "classe_name": "Hindi",
+    "available_seat": 8,
+    "price": 270
+  }
+]
