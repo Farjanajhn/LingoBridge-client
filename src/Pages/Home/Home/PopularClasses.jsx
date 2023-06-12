@@ -10,7 +10,7 @@ const PopularClasses = () => {
     fetch('http://localhost:3000/classes')
       .then(res => res.json())
       .then(data => {
-      setPopularClasses(data)
+        setPopularClasses(data);
     })
   },[])
   return (

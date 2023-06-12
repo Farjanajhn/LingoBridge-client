@@ -1,14 +1,15 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-
+ 
   const from=location.state?.from?.pathname || "/"
   const handleLogin = event => {
     event.preventDefault();
@@ -26,6 +27,9 @@ const Login = () => {
     
 
   }
+  const handlePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -46,14 +50,17 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" name="password" className="input input-bordered" />
+                <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" className="input input-bordered" />
+                <button type="button" onClick={handlePasswordVisibility}>
+            {showPassword ? 'Hide' : 'Show'} _password
+          </button>
           
         </div>
         <div className="form-control mt-6">
                 <input className="btn btn-primary" type="submit" value="login"/>
         </div>
             </form>
-            <p><small>New Here? <Link to="/signup">Register</Link></small></p>
+            <p className="text-xl pl-4 py-4"><small>New Here? <Link to="/signup"><button className="btn btn-outline btn-primary ml-2">Register</button></Link></small></p>
     </div>
   </div>
 </div>
