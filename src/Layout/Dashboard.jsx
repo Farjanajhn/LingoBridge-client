@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link,  Outlet } from "react-router-dom";
 import Navbar from "../Pages/Shared/Navbar";
 import { FaHome, FaShoppingCart, FaWallet } from 'react-icons/fa';
 import useCart from "../Components/hooks/useCart";
@@ -27,7 +27,7 @@ const Dashboard = () => {
             
 <li><Link to="/dashboard/myCart">
 < FaShoppingCart /> My Course
-        <div className="badge badge-secondary">+{ cart?.length || 0}</div>
+              <span className="badge badge-secondary">+{cart?.length || 0}</span>
         </Link></li>
             <li><Link><FaWallet></FaWallet>My Payment</Link></li>
       </ul>

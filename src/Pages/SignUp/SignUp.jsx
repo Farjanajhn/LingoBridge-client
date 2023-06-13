@@ -21,21 +21,32 @@ const SignUp = () => {
         console.log(loggedUser);
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
-            console.log('user profile info update');
-            reset();
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Your work has been saved',
-              showConfirmButton: false,
-              timer: 1500
+         const saveUser = {name: data.name, email:data.email}
+            fetch('http://localhost:3000/users', {
+              method: 'POST',
+              headers: {
+                'content-type':'application/json'
+              },
+              body:JSON.stringify(saveUser)
             })
-
+              .then(res => res.json())
+              .then(data => {
+                if (data.insertedId) {
+                  reset();
+                  Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+                  navigate('/');
+              }
+            })
+         
           })
-          .catch(error => {
-          console.log(error)
-          })
-        navigate('/')
+         .catch(error =>console.log(error))
+    
     })
   }
   return (
@@ -82,12 +93,24 @@ const SignUp = () => {
           </label>
           <input type="password" placeholder="password" name="password" {...register("password", {
        
-            pattern:/^[a-z]{1,6}$/
+       required: true,
+       minLength: 6,
+       pattern: /^(?=.*[A-Z])(?=.*[!@#$%^&*])/
 
          })} className="input input-bordered" />
        
           
-          {errors.password?.type === 'pattern' && <p className="text-red-600">Password must be less than 6 characters,must not contain any uppercase, must not contain any special character</p>} 
+       {errors.password?.type === 'required' && (
+          <p>Password is required.</p>
+        )}
+        {errors.password?.type === 'minLength' && (
+          <p>Password should be at least 6 characters long.</p>
+        )}
+        {errors.password?.type === 'pattern' && (
+          <p>
+            Password should contain at least one capital letter and one special character.
+          </p>
+        )}
           
         </div>
         <div className="form-control mt-6">
