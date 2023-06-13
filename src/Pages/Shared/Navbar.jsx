@@ -21,7 +21,7 @@ const Navbar = () => {
         user ? <li><Link to="/dashboard">Dashboard</Link></li> :''
       }  
 
-<li><Link to="/"> 
+<li><Link to="/dashboard/myCart"> 
 < FaShoppingCart />
         <div className="badge badge-secondary">+{ cart?.length || 0}</div>
 </Link></li>

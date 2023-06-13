@@ -33,9 +33,6 @@ export const router = createBrowserRouter([
         path: 'signup',
         element:<SignUp></SignUp>
       },
-   
-    
-
       {
         path: 'instructors',
         element:<Instructors></Instructors>
@@ -43,19 +40,19 @@ export const router = createBrowserRouter([
     ],
   },
  
-  {
+ {
     path:'dashboard',
     element: <Dashboard></Dashboard>,
 
     children: [
       {
         
-          path: 'dashboard/myCart',
+          path: 'myCart',
          element:<MyCart></MyCart>
         
       }
     ]
-  }, 
+  },  
 
  {
     path: '*',

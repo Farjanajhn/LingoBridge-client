@@ -1,10 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "../Pages/Shared/Navbar";
 
 
 
 const Dashboard = () => {
   return (
-    <div className="drawer lg:drawer-open">
+    <div>
+      <Navbar></Navbar>
+      <div className="drawer lg:drawer-open">
     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center">
        
@@ -23,6 +26,7 @@ const Dashboard = () => {
     
     </div>
   </div>
+    </div>
   );
 };
 
