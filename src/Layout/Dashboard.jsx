@@ -1,11 +1,14 @@
 import { Link,  Outlet } from "react-router-dom";
 import Navbar from "../Pages/Shared/Navbar";
-import { FaHome, FaShoppingCart, FaWallet } from 'react-icons/fa';
+import { FaHome, FaShoppingBag, FaShoppingCart, FaUsers, FaWallet } from 'react-icons/fa';
 import useCart from "../Components/hooks/useCart";
 
 
 const Dashboard = () => {
   const [cart] = useCart();
+
+
+  const isAdmin = true;
   return (
     <div>
       <Navbar></Navbar>
@@ -21,15 +24,30 @@ const Dashboard = () => {
     <div className="drawer-side">
       <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
       <ul className="menu p-4 w-80 h-full bg-purple-900 text-white mt-4">
-            {/* Sidebar content here */}
-            <li className="text-xl font-bold my-4 text-center"><FaHome></FaHome>Student Dashboard</li>
+            {
+              isAdmin ? <>
+                          <li className="text-xl font-bold my-4 text-center"><FaHome></FaHome>Admin Dashboard</li>
            
             
-<li><Link to="/dashboard/myCart">
-< FaShoppingCart /> My Course
-              <span className="badge badge-secondary">+{cart?.length || 0}</span>
-        </Link></li>
-            <li><Link><FaWallet></FaWallet>My Payment</Link></li>
+           <li><Link>< FaShoppingBag /> Manage Classes
+                         <span className="badge badge-secondary"></span>
+                   </Link></li>
+                       <li><Link to="/dashboard/manageUsers"><FaUsers></FaUsers>Manage Users</Link></li>
+
+
+              </> : <>
+                
+                <li className="text-xl font-bold my-4 text-center"><FaHome></FaHome>Student Dashboard</li>
+           
+            
+           <li><Link to="/dashboard/myCart">
+           < FaShoppingCart /> My Course
+                         <span className="badge badge-secondary">+{cart?.length || 0}</span>
+                   </Link></li>
+                       <li><Link><FaWallet></FaWallet>My Payment</Link></li>
+              </>
+}
+  
       </ul>
     
     </div>
