@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaUserShield, FaUserTie } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -7,6 +8,7 @@ import Swal from "sweetalert2";
 
 
 const ManageUsers = () => {
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const {data: users=[],refetch } = useQuery(['users'], async () => {
     const res = await fetch('http://localhost:3000/users')
     return res.json();
@@ -23,6 +25,26 @@ const ManageUsers = () => {
             position: 'top-end',
             icon: 'success',
             title: `${user.name} is an admin now!`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+          
+      }
+      })
+      setIsButtonDisabled(true);
+  }
+  const handleMakeInstructor = user => {
+    fetch(`http://localhost:3000/users/instructor/${user._id}`, {
+      method:'PATCH'
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.modifiedCount) {
+          refetch()
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: `${user.name} is an instructor now!`,
             showConfirmButton: false,
             timer: 1500
           })
@@ -64,8 +86,8 @@ const ManageUsers = () => {
 
                   </td>
                   <td>
-                    <button onClick={()=> handleMakeAdmin(user)} className="btn btn-ghost btn-xl"><FaUserShield/>Make Admin</button>
-                    <button className="btn btn-ghost btn-xl"><FaUserTie/>Make Instructor</button>
+                    <button onClick={()=> handleMakeAdmin(user)} className="btn btn-ghost btn-xl"  disabled={isButtonDisabled}><FaUserShield/>Make Admin</button></td>
+                    <td><button onClick={()=>handleMakeInstructor(user) } className="btn btn-ghost btn-xl"><FaUserTie/>Make Instructor</button>
                 </td>
         
               </tr>)
