@@ -2,6 +2,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import SocialLogin from "../../SignUp/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -61,8 +62,12 @@ const Login = () => {
         </div>
             </form>
             <p className="text-xl pl-4 py-4"><small>New Here? <Link to="/signup"><button className="btn btn-outline btn-primary ml-2">Register</button></Link></small></p>
-    </div>
-  </div>
+
+            <SocialLogin></SocialLogin>
+          </div>
+          
+        </div>
+       
 </div>
       
     </div>
