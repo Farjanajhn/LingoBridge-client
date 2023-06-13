@@ -1,9 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import Navbar from "../Pages/Shared/Navbar";
-
+import { FaHome, FaShoppingCart, FaWallet } from 'react-icons/fa';
+import useCart from "../Components/hooks/useCart";
 
 
 const Dashboard = () => {
+  const [cart] = useCart();
   return (
     <div>
       <Navbar></Navbar>
@@ -19,9 +21,15 @@ const Dashboard = () => {
     <div className="drawer-side">
       <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
       <ul className="menu p-4 w-80 h-full bg-purple-900 text-white mt-4">
-        {/* Sidebar content here */}
-        <li><a>Sidebar Item 1</a></li>
-        <li><a>Sidebar Item 2</a></li>
+            {/* Sidebar content here */}
+            <li className="text-xl font-bold my-4 text-center"><FaHome></FaHome>Student Dashboard</li>
+           
+            
+<li><Link to="/dashboard/myCart">
+< FaShoppingCart /> My Course
+        <div className="badge badge-secondary">+{ cart?.length || 0}</div>
+        </Link></li>
+            <li><Link><FaWallet></FaWallet>My Payment</Link></li>
       </ul>
     
     </div>
