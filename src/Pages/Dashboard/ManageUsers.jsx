@@ -3,15 +3,17 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FaUserShield, FaUserTie } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Components/hooks/useAxciosSecure";
 
 
 
 
 const ManageUsers = () => {
+  const [axiosSecure] = useAxiosSecure();
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const {data: users=[],refetch } = useQuery(['users'], async () => {
-    const res = await fetch('http://localhost:3000/users')
-    return res.json();
+    const res = await axiosSecure.get('/users')
+    return res.data;
   })
   const handleMakeAdmin = user => {
     fetch(`http://localhost:3000/users/admin/${user._id}`, {

@@ -32,9 +32,9 @@ const Navbar = () => {
   return (
 
     <div>
-      <div className="navbar bg-purple-900 text-white">
+      <div className="navbar fixed z-30 max-w-screen-xl bg-purple-900">
   <div className="navbar-start">
-    <div className="dropdown">
+    <div className="dropdown  text-yellow-700">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
@@ -42,9 +42,9 @@ const Navbar = () => {
         {navOptions}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Lingo Bridge</a>
+    <a className="btn btn-ghost normal-case text-xl text-white">Lingo Bridge</a>
   </div>
-  <div className="navbar-center hidden lg:flex">
+  <div className="navbar-center hidden lg:flex  text-white">
     <ul className="menu menu-horizontal px-1">
      {navOptions}
     </ul>
@@ -53,10 +53,10 @@ const Navbar = () => {
           {
             user ? <>
              {/*  <span>{user?.displayName}</span> */}
-                 <button onClick={handleLogOut}>LogOut</button>
+                 <button className="pr-4 text-white"onClick={handleLogOut}>LogOut</button>
             </> :
               <>
-                   <Link to="/login"><button>Login</button></Link>
+                   <Link to="/login"><button className="pr-4 text-white">Login</button></Link>
               </>
 }
   </div>
