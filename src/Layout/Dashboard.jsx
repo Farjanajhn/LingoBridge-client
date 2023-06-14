@@ -3,12 +3,16 @@ import Navbar from "../Pages/Shared/Navbar";
 import { FaHome, FaShoppingBag, FaShoppingCart, FaUsers, FaWallet } from 'react-icons/fa';
 import useCart from "../Components/hooks/useCart";
 
+import useAdmin from "../Components/hooks/UseAdmin";
+
 
 const Dashboard = () => {
   const [cart] = useCart();
 
 
-  const isAdmin = true;
+  /* const isAdmin = true; */
+  const [isAdmin] = useAdmin();
+  console.log(isAdmin)
   return (
     <div>
       <Navbar></Navbar>
@@ -26,20 +30,18 @@ const Dashboard = () => {
       <ul className="menu p-4 w-80 h-full bg-purple-900 text-white mt-4">
             {
               isAdmin ? <>
-                          <li className="text-xl font-bold my-4 text-center"><FaHome></FaHome>Admin Dashboard</li>
+                <li className="text-xl font-bold my-4 text-center"><FaHome></FaHome>Admin Dashboard</li>
            
-            
-           <li><Link>< FaShoppingBag /> Manage Classes
-                         <span className="badge badge-secondary"></span>
-                   </Link></li>
-                       <li><Link to="/dashboard/manageUsers"><FaUsers></FaUsers>Manage Users</Link></li>
-
-
-              </> : <>
+                <li><Link>< FaShoppingBag /> Manage Classes
+                  <span className="badge badge-secondary"></span>
+                </Link></li>
+                <li><Link to="/dashboard/manageUsers"><FaUsers></FaUsers>Manage Users</Link></li></> :
+                
+                
+                <>
                 
                 <li className="text-xl font-bold my-4 text-center"><FaHome></FaHome>Student Dashboard</li>
-           
-            
+          
            <li><Link to="/dashboard/myCart">
            < FaShoppingCart /> My Course
                          <span className="badge badge-secondary">+{cart?.length || 0}</span>

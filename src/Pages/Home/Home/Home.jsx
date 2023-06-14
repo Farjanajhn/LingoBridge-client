@@ -43,6 +43,7 @@ const Home = () => {
   </div>
       </div>
       <PopularClasses></PopularClasses>
+      
       <PopularInstructor></PopularInstructor>
     </div>
   );
