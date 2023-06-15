@@ -4,6 +4,8 @@ import {
 } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
+import AddClass from "../Pages/Dashboard/AddClass";
+
 import ManageUsers from "../Pages/Dashboard/ManageUsers";
 
 import MyCart from "../Pages/Dashboard/myCart";
@@ -13,6 +15,8 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Home/Login/Login";
 import Instructors from "../Pages/Instructors/Instructors";
 import SignUp from "../Pages/SignUp/SignUp";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -55,7 +59,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'manageUsers',
-        element:<ManageUsers></ManageUsers>
+        element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+      },
+      {
+        path: 'addClass',
+        element:<InstructorRoute><AddClass></AddClass></InstructorRoute>
       }
     ]
   },  
