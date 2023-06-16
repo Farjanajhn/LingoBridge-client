@@ -7,7 +7,7 @@ import PinstructorsList from "./PinstructorsList";
 const PopularInstructor = () => {
   const [instructors,setInstructors]=useState([])
   useEffect(() => {
-    fetch('https://lingo-bridge-server.vercel.app/instructors')
+    fetch('https://lingo-bridge-server-farjanajhn.vercel.app//instructors')
       .then(res=>res.json())
       .then(data => {
       setInstructors(data)

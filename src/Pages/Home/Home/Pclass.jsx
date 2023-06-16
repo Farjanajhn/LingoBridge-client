@@ -21,7 +21,7 @@ const Pclass = ({ popularClass }) => {
     console.log(popularClass)
     if (user && user.email) {
       const orderCourse={classId:id,img, available_seat, price,student,classe_name, name,email:user.email }
-      fetch('https://lingo-bridge-server.vercel.app/carts', {
+      fetch('https://lingo-bridge-server-farjanajhn.vercel.app//carts', {
         method: 'POST',
         headers: {
           'content-type':'application/json'

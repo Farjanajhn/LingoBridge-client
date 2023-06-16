@@ -10,7 +10,7 @@ const MyClass = () => {
   const [myClass, setMyClass] = useState([])
   
   useEffect(() => {
-    fetch(`https://lingo-bridge-server.vercel.app/myClass?email=${user?.email}`)
+    fetch(`https://lingo-bridge-server-farjanajhn.vercel.app//myClass?email=${user?.email}`)
       .then(res => res.json())
     .then(data=>setMyClass(data))
   },[user])

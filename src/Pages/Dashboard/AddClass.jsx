@@ -24,7 +24,7 @@ const AddClass = () => {
     console.log(newClass);
 
     //send data to the server
-    fetch('https://lingo-bridge-server.vercel.app/classes', {
+    fetch('https://lingo-bridge-server-farjanajhn.vercel.app//classes', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

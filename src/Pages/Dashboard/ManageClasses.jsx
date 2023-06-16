@@ -13,7 +13,7 @@ const ManageClasses = () => {
   const [manageClass, setManageClass] = useState([])
   
   useEffect(() => {
-    fetch(`https://lingo-bridge-server.vercel.app/manageClasses`)
+    fetch(`https://lingo-bridge-server-farjanajhn.vercel.app//manageClasses`)
       .then(res => res.json())
     .then(data=>setManageClass(data))
   }, [user])

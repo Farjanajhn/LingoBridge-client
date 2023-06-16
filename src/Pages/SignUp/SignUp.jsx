@@ -23,7 +23,7 @@ const SignUp = () => {
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
          const saveUser = {name: data.name, photo:data.photoURL, email:data.email}
-            fetch('https://lingo-bridge-server.vercel.app/users', {
+            fetch('https://lingo-bridge-server-farjanajhn.vercel.app//users', {
               method: 'POST',
               headers: {
                 'content-type':'application/json'
