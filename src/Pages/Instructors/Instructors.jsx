@@ -5,7 +5,7 @@ import InstructorCard from "./InstructorCard";
 const Instructors = () => {
   const [instructors,setInstructors]=useState([])
   useEffect(() => {
-    fetch('https://lingo-bridge-server-farjanajhn.vercel.app//instructorsList')
+    fetch('https://lingo-bridge-server-farjanajhn.vercel.app/instructorsList')
       .then(res=>res.json())
       .then(data => {
       setInstructors(data)

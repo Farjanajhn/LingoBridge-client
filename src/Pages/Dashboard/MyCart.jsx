@@ -18,7 +18,7 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         refetch();
-        fetch(`https://lingo-bridge-server-farjanajhn.vercel.app//carts/${item._id}`, {
+        fetch(`https://lingo-bridge-server-farjanajhn.vercel.app/carts/${item._id}`, {
        method:'DELETE'
         })
           .then(res => res.json())

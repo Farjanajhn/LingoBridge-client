@@ -16,7 +16,7 @@ const ManageUsers = () => {
     return res.data;
   })
   const handleMakeAdmin = user => {
-    fetch(`https://lingo-bridge-server-farjanajhn.vercel.app//users/admin/${user._id}`, {
+    fetch(`https://lingo-bridge-server-farjanajhn.vercel.app/users/admin/${user._id}`, {
       method:'PATCH'
     })
       .then(res => res.json())
@@ -36,7 +36,7 @@ const ManageUsers = () => {
       setIsButtonDisabled(true);
   }
   const handleMakeInstructor = user => {
-    fetch(`https://lingo-bridge-server-farjanajhn.vercel.app//users/instructor/${user._id}`, {
+    fetch(`https://lingo-bridge-server-farjanajhn.vercel.app/users/instructor/${user._id}`, {
       method:'PATCH'
     })
       .then(res => res.json())

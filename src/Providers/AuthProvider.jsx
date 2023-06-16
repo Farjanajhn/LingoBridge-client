@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
       //get and set token
       if (user)
       {
-        axios.post('https://lingo-bridge-server-farjanajhn.vercel.app//jwt', {
+        axios.post('https://lingo-bridge-server-farjanajhn.vercel.app/jwt', {
         email:currentUser?.email
         })
           .then(data => {
