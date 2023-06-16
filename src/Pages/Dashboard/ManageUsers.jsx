@@ -16,7 +16,7 @@ const ManageUsers = () => {
     return res.data;
   })
   const handleMakeAdmin = user => {
-    fetch(`http://localhost:3000/users/admin/${user._id}`, {
+    fetch(`https://lingo-bridge-server.vercel.app/users/admin/${user._id}`, {
       method:'PATCH'
     })
       .then(res => res.json())
@@ -36,7 +36,7 @@ const ManageUsers = () => {
       setIsButtonDisabled(true);
   }
   const handleMakeInstructor = user => {
-    fetch(`http://localhost:3000/users/instructor/${user._id}`, {
+    fetch(`https://lingo-bridge-server.vercel.app/users/instructor/${user._id}`, {
       method:'PATCH'
     })
       .then(res => res.json())
@@ -52,7 +52,8 @@ const ManageUsers = () => {
           })
           
       }
-    })
+      })
+      setIsButtonDisabled(true);
   }
   return (
     <div>
@@ -66,7 +67,8 @@ const ManageUsers = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>#</th>
+              <th>#</th>
+              <th>Image</th>
         <th>Name</th>
         <th>Email</th>
         <th>Role</th>
@@ -76,9 +78,11 @@ const ManageUsers = () => {
     </thead>
     <tbody>
             {
-              users.map((user,index) =>
+              users.map((user, index) =>
+                
                 <tr key={user._id}>
-                  <td>{index +1}</td>
+                  <td>{index + 1}</td>
+                  <tr><img className="w-[100px] h-[100px]"src={user.photo} /></tr>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
                   <td>
@@ -89,7 +93,7 @@ const ManageUsers = () => {
                   </td>
                   <td>
                     <button onClick={()=> handleMakeAdmin(user)} className="btn btn-ghost btn-xl"  disabled={isButtonDisabled}><FaUserShield/>Make Admin</button></td>
-                    <td><button onClick={()=>handleMakeInstructor(user) } className="btn btn-ghost btn-xl"><FaUserTie/>Make Instructor</button>
+                    <td><button onClick={()=>handleMakeInstructor(user) } className="btn btn-ghost btn-xl" disabled={isButtonDisabled}><FaUserTie/>Make Instructor</button>
                 </td>
         
               </tr>)

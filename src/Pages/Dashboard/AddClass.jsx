@@ -13,16 +13,18 @@ const AddClass = () => {
   const handleAddClass = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    const classe_name = form.classe_name.value;
     const available_seat = form.available_seat.value;
     const price = form.price.value;
     const photo = form.photo.value;
     const status = form.status.value;
-    const newClass = { name, status, photo, price, available_seat };
+    const name = form.name.value;
+    const email = form.email.value;
+    const newClass = { classe_name,name, status,email, photo, price, available_seat };
     console.log(newClass);
 
     //send data to the server
-    fetch('http://localhost:3000/classes', {
+    fetch('https://lingo-bridge-server.vercel.app/classes', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -57,7 +59,7 @@ const AddClass = () => {
   </label>
   <label className="input-group">
   
-    <input type="text" placeholder="class name" name="name" className="input input-bordered w-full" />
+    <input type="text" placeholder="class name" name="classe_name" className="input input-bordered w-full" />
   </label>
 </div>
         <div className='md:flex'>
@@ -117,7 +119,7 @@ const AddClass = () => {
   </label>
   <label className="input-group">
   
-    <input type="text" placeholder="Instructor Name" value={user?.displayName} readOnly className="input input-bordered w-full" />
+    <input type="text" placeholder="Instructor Name" value={user?.displayName} readOnly name="name"className="input input-bordered w-full" />
   </label>
          </div>
          <div className="form-control w-1/2 ml-4">
@@ -126,7 +128,7 @@ const AddClass = () => {
   </label>
   <label className="input-group ">
   
-    <input type="text" value={user?.email} readOnly placeholder="Instructor Name" className="input input-bordered w-full" />
+    <input type="text" value={user?.email} readOnly name="email" placeholder="Instructor Email" className="input input-bordered w-full" />
   </label>
 </div>
  

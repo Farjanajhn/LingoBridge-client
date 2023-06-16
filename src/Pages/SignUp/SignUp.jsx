@@ -22,8 +22,8 @@ const SignUp = () => {
         console.log(loggedUser);
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
-         const saveUser = {name: data.name, email:data.email}
-            fetch('http://localhost:3000/users', {
+         const saveUser = {name: data.name, photo:data.photoURL, email:data.email}
+            fetch('https://lingo-bridge-server.vercel.app/users', {
               method: 'POST',
               headers: {
                 'content-type':'application/json'
@@ -52,7 +52,10 @@ const SignUp = () => {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+      <div className="my-10">
+      <h1 className="text-purple-900 font-bold text-5xl text-center">Sign Up</h1>
+        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+       
       <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -101,7 +104,8 @@ const SignUp = () => {
           </p>
         )}
           
-        </div>
+          </div>
+          
         <div className="form-control mt-6">
                 <input className="btn bg-purple-900 text-white" type="submit" value="Sign Up"/>
         </div>
@@ -109,6 +113,7 @@ const SignUp = () => {
       <p className="text-xl pl-4 py-4 font-semibold"><small>Already have an account? <Link to="/login"><span className="text-purple-900 text-xl font-bold">Login</span></Link></small></p>
       <SocialLogin></SocialLogin>
     </div>
+ </div>
   );
 };
 

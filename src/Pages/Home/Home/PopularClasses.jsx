@@ -7,7 +7,7 @@ import Pclass from "./pClass";
 const PopularClasses = () => {
   const [popularClasses, setPopularClasses] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/classes')
+    fetch('https://lingo-bridge-server.vercel.app/classes')
       .then(res => res.json())
       .then(data => {
         setPopularClasses(data);

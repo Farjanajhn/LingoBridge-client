@@ -1,5 +1,6 @@
 
 import { useContext, useState } from "react";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import SocialLogin from "../../SignUp/SocialLogin/SocialLogin";
@@ -52,8 +53,8 @@ const Login = () => {
             <span className="label-text">Password</span>
           </label>
                 <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" className="input input-bordered" />
-                <button type="button" onClick={handlePasswordVisibility}>
-            {showPassword ? 'Hide' : 'Show'} _password
+                <button className=" flex flex-cols justify-center my-4 items-center"type="button" onClick={handlePasswordVisibility}>
+              {showPassword ?<FaRegEyeSlash/> : <FaRegEye/>} 
           </button>
           
         </div>
@@ -61,7 +62,7 @@ const Login = () => {
                 <input className="btn btn-primary" type="submit" value="login"/>
         </div>
             </form>
-            <p className="text-xl pl-4 py-4"><small>New Here? <Link to="/signup"><button className="btn btn-outline btn-primary ml-2">Register</button></Link></small></p>
+            <p className="text-xl pl-4 py-4 font-semibold"><small>New Here? <Link to="/signup"><span className="text-purple-900 text-xl font-bold">Register Now!</span></Link></small></p>
 
             <SocialLogin></SocialLogin>
           </div>

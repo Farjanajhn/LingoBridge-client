@@ -5,10 +5,12 @@ import {
 import Dashboard from "../Layout/Dashboard";
 import Main from "../Layout/Main";
 import AddClass from "../Pages/Dashboard/AddClass";
+import ManageClasses from "../Pages/Dashboard/ManageClasses";
 
 import ManageUsers from "../Pages/Dashboard/ManageUsers";
 
 import MyCart from "../Pages/Dashboard/myCart";
+import MyClass from "../Pages/Dashboard/myClass";
 
 import ErrorElement from "../Pages/ErrorElement/ErrorElement";
 import Home from "../Pages/Home/Home/Home";
@@ -30,6 +32,10 @@ export const router = createBrowserRouter([
         element:<Home></Home>
       },
       {
+        path: 'instructors',
+        element:<Instructors></Instructors>
+      },
+      {
         path:'login',
         element:<Login></Login>
       },
@@ -39,21 +45,18 @@ export const router = createBrowserRouter([
         path: 'signup',
         element:<SignUp></SignUp>
       },
-      {
-        path: 'instructors',
-        element:<Instructors></Instructors>
-      }
+     
     ],
   },
  
  {
     path:'dashboard',
-    element:<PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
+    element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
 
     children: [
       {
         
-          path: 'myCart',
+        path: 'myCart',
          element:<MyCart></MyCart>
         
       },
@@ -62,8 +65,16 @@ export const router = createBrowserRouter([
         element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
       },
       {
+        path: 'manageClasses',
+        element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+      },
+      {
         path: 'addClass',
         element:<InstructorRoute><AddClass></AddClass></InstructorRoute>
+      },
+      {
+        path: 'myClass',
+        element:<InstructorRoute><MyClass></MyClass></InstructorRoute>
       }
     ]
   },  

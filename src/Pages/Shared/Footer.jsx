@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-purple-900 text-white flex items-center justify-around">
+    <footer className="footer footer-center p-10 bg-purple-900 text-white flex items-center justify-around my-6 rounded-lg">
     <div>
       <h1 className="text-3xl font-bold">Lingo Bridge</h1>
       <p className="font-bold">

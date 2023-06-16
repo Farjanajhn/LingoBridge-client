@@ -13,7 +13,7 @@ const useCart = () => {
       
       enabled:!!user?.email && !!loading && !!localStorage.getItem("access-token"),
       /*      queryFn: async () => {
-             const res = await fetch(`http://localhost:3000/carts?email=${user.email}`, {
+             const res = await fetch(`https://lingo-bridge-server.vercel.app/carts?email=${user.email}`, {
                headers: {
                  authorization:`bearer ${token}`
                }

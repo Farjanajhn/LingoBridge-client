@@ -35,7 +35,7 @@ const Dashboard = () => {
       <FaHome></FaHome>Admin Dashboard
     </li>
     <li>
-      <Link>
+      <Link to="/dashboard/manageClasses">
         <FaShoppingBag /> Manage Classes
       </Link>
     </li>
@@ -56,7 +56,7 @@ const Dashboard = () => {
       </Link>
     </li>
     <li>
-      <Link to="/dashboard/manageUsers">
+      <Link to="/dashboard/myClass">
         <FaUsers></FaUsers>My Classes
       </Link>
     </li>
